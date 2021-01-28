@@ -93,4 +93,3 @@ C:\Users\Jerome\source\repos\CodeTest\WebApplication1\WebApplication1\obj\Debug\
 C:\Users\Jerome\source\repos\CodeTest\WebApplication1\WebApplication1\obj\Debug\CodeTest.csproj.CopyComplete
 C:\Users\Jerome\source\repos\CodeTest\WebApplication1\WebApplication1\obj\Debug\CodeTest.dll
 C:\Users\Jerome\source\repos\CodeTest\WebApplication1\WebApplication1\obj\Debug\CodeTest.pdb
-C:\Users\Jerome\source\repos\CodeTest\WebApplication1\WebApplication1\obj\Debug\CodeTest.csprojAssemblyReference.cache
