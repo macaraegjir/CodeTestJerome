@@ -30,6 +30,5 @@ Account nos. available
 Length of Account number should be 8 digits and should only contain numbers
 
 
-###Comments
+### Comments
 * I assumed that the Status field is on the Account level not the payment level
-* 
