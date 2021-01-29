@@ -11,20 +11,22 @@ namespace CodeTest.Controllers
 {
     public class AccountsController : ApiController
     {
-        
-
+        private AccountPaymentDetails _details;
+        public AccountsController()
+        {
+            _details = new AccountPaymentDetails();
+        }
         
         [Route("api/accounts/GetAccountPaymentDetails/{id}")]
         public AccountDetailModel GetAccountPaymentDetails(string id)
         {
             
-                AccountPaymentDetails details = new AccountPaymentDetails();
                 //will populate database on first run
-                details.fillData();
+                _details.FillData();
                 //check input format
-                details.checkInputFormat(id);
+                _details.CheckInputFormat(id);
 
-                AccountDetailModel acctModel = details.GetAccountPaymentDetails(id);
+                AccountDetailModel acctModel = _details.GetAccountPaymentDetails(id);
 
                 return acctModel;
             

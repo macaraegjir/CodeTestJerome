@@ -3,7 +3,7 @@ using System;
 using NUnit.Framework;
 using CodeTest.Model;
 using CodeTest.DataModels;
-using CodeTest.Controllers;
+//using CodeTest.Controllers;
 using CodeTest.Business_Logic;
 using System.Net;
 using System.Net.Http;
@@ -24,9 +24,9 @@ namespace CodeTest_Test
             AccountPaymentDetails details = new AccountPaymentDetails();
             try
             {
-                details.checkInputFormat("12345678");
+                details.CheckInputFormat("12345678");
             }
-            catch (HttpResponseException ex)
+            catch
             {
                 NUnit.Framework.Assert.Fail();
             }
@@ -39,9 +39,9 @@ namespace CodeTest_Test
             AccountPaymentDetails details = new AccountPaymentDetails();
             try
             {
-                details.checkInputFormat("1234567");
+                details.CheckInputFormat("1234567");
             }
-            catch (HttpResponseException ex)
+            catch 
             {
 
                 NUnit.Framework.Assert.Pass();
@@ -56,9 +56,9 @@ namespace CodeTest_Test
             AccountPaymentDetails details = new AccountPaymentDetails();
             try
             {
-                details.checkInputFormat("1234567a");
+                details.CheckInputFormat("1234567a");
             }
-            catch (HttpResponseException ex)
+            catch 
             {
 
                 NUnit.Framework.Assert.Pass();
@@ -76,7 +76,7 @@ namespace CodeTest_Test
             {
                 account = details.GetAccountPaymentDetails("10000001");
             }
-            catch (HttpResponseException ex)
+            catch 
             {
 
                 NUnit.Framework.Assert.Fail();
