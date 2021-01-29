@@ -55,16 +55,16 @@ namespace CodeTest.Business_Logic
 
         public AccountDetailModel GetAccountPaymentDetails(string AccountNo)
         {
-            AccountDetailsDataAdapter da_AccountDetails = new AccountDetailsDataAdapter();
+            AccountDetailsDataAdapter accountDetails = new AccountDetailsDataAdapter();
             
             //call dataaccess to get Account data from DB
-            AccountDetailModel details = da_AccountDetails.GetAccountDetailsEntity(AccountNo);
+            AccountDetailModel details = accountDetails.GetAccountDetailsEntity(AccountNo);
 
             
-            PaymentDetailsDataAdapter da_PaymentDetails = new PaymentDetailsDataAdapter();
+            PaymentDetailsDataAdapter paymentDetails = new PaymentDetailsDataAdapter();
 
             //get Payment details
-            List<PaymentDetailModel> PayDetails = da_PaymentDetails.GetPaymentDetailsEntity(AccountNo);
+            List<PaymentDetailModel> PayDetails = paymentDetails.GetPaymentDetailsEntity(AccountNo);
 
             //apply payment details to AccountDetailModel
             details.PaymentDetails = PayDetails;
@@ -78,13 +78,13 @@ namespace CodeTest.Business_Logic
 
         private decimal CalculateTotalBalance(List<PaymentDetailModel> PayDetails)
         {
-            decimal Total = 0;
+            decimal total = 0;
             foreach (PaymentDetailModel detail in PayDetails)
             {
-                Total += detail.Amount;
+                total += detail.Amount;
             }
 
-            return Total;
+            return total;
         }
 
         public void CheckInputFormat(string AccountNo)
